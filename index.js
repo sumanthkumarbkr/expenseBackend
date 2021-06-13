@@ -3,6 +3,9 @@ const app = express();
 const router = express.Router();
 const db = require('./db');
 const expense = require('./routes/expenses');
+const cors = require('cors')
+
+app.use(cors());
 
 
 app.use('/expense', expense);
