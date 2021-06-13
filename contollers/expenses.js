@@ -10,6 +10,7 @@ exports.get = function (req, res) {
   }
   
   exports.create= function (req, res) {
+    console.log(req.body,"req.body")
     var newExpense = new Expense(req.body);
     newExpense.save(function (err,expense) {
       if (err) {
@@ -30,7 +31,7 @@ exports.get = function (req, res) {
     });
   }
 
-  exports.create= function (req, res) {
+  exports.delete= function (req, res) {
     Expense.remove(req.query).exec(function (err) {
       if (err) {
         res.status(400).send('Unable to delete');
